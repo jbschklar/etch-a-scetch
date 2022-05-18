@@ -6,6 +6,7 @@ const btnReset = document.querySelector(".reset");
 const gridSqSize = 900;
 const gridItemSize = 8;
 let gridNum;
+let on;
 
 // Prompts user for pixel number
 const getGridNum = function () {
@@ -15,11 +16,13 @@ const getGridNum = function () {
 
 // Starts application when the start button is clicked
 btnStart.addEventListener("click", function () {
+	on = 0;
 	// Resets the grid back to blank canvas
 	const reset = function () {
 		gridItems.forEach((grid) => {
 			grid.style.backgroundColor = "white";
 		});
+		on = 0;
 	};
 
 	gridNum = getGridNum();
@@ -46,10 +49,18 @@ btnStart.addEventListener("click", function () {
 	grid-template-rows: repeat(${gridNum}, 1fr);
     `;
 
-	// Creates etch-a-sketch effect
+	gridContainer.addEventListener("click", function () {
+		if (on < 2)
+			gridItems.forEach((grid) => {
+				grid.classList.toggle("live");
+			});
+		on++;
+		console.log(on);
+	});
+
 	gridItems.forEach((grid) => {
 		grid.addEventListener("mousemove", function () {
-			grid.style.backgroundColor = "black";
+			if (grid.classList.contains("live")) grid.style.backgroundColor = "black";
 		});
 	});
 

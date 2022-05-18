@@ -24,6 +24,10 @@ h1 {
 	width: 700px;
 }
 
+/* .live {
+	background-color: black;
+} */
+
 .btns {
 	display: flex;
 	gap: 64px;
