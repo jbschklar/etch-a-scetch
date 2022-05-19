@@ -24,8 +24,9 @@ h1 {
 	width: 700px;
 }
 
+/* Used to test/ see active grid-items */
 /* .live {
-	background-color: black;
+	border: 1px solid black;
 } */
 
 .btns {
