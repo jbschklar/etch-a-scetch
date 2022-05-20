@@ -4,7 +4,6 @@ const gridContainer = document.querySelector(".sketch-pad");
 const btnStart = document.querySelector(".prompt");
 const btnReset = document.querySelector(".reset");
 const gridSqSize = 900;
-const gridItemSize = 8;
 let gridNum;
 let clickCount;
 let gridItems;
